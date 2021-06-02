@@ -1,9 +1,5 @@
 connection: "snowflake_demo"
 
-
-
-
-
 # include all the views
 include: "/views/**/*.view"
 
@@ -14,11 +10,11 @@ datagroup: lookersession_default_datagroup {
 
 persist_with: lookersession_default_datagroup
 
-explore: call_center {}
+
 
 explore: catalog_page {}
 
-explore: catalog_returns {}
+
 
 explore: catalog_sales {}
 
