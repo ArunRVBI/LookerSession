@@ -12,7 +12,7 @@ persist_with: lookersession_default_datagroup
 
 
 
-explore: catalog_page {}
+
 
 
 
