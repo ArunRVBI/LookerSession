@@ -89,8 +89,8 @@ view: store {
     sql: ${TABLE}."S_MARKET_MANAGER" ;;
   }
 
-  dimension: s_number_employees {
-    type: number
+  measure: s_number_employees {
+    type: sum
     sql: ${TABLE}."S_NUMBER_EMPLOYEES" ;;
   }
 
@@ -127,6 +127,7 @@ view: store {
   dimension: s_state {
     type: string
     sql: ${TABLE}."S_STATE" ;;
+    drill_fields: [s_street_name,s_store_name]
   }
 
   dimension: s_store_name {

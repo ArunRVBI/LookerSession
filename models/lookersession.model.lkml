@@ -44,7 +44,13 @@ explore: ship_mode {}
 
 explore: store {}
 
-explore: store_returns {}
+explore: store_returns {
+  join: customer {
+    type: inner
+    relationship: many_to_one
+    sql_on: ${store_returns.sr_customer_sk} = ${customer.c_customer_sk} ;;
+  }
+}
 
 explore: store_returns_bkp {}
 

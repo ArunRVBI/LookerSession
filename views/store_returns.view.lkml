@@ -47,8 +47,8 @@ view: store_returns {
     sql: ${TABLE}."SR_REFUNDED_CASH" ;;
   }
 
-  dimension: sr_return_amt {
-    type: number
+  measure: sr_return_amt {
+    type: sum
     sql: ${TABLE}."SR_RETURN_AMT" ;;
   }
 
@@ -62,8 +62,8 @@ view: store_returns {
     sql: ${TABLE}."SR_RETURN_QUANTITY" ;;
   }
 
-  dimension: sr_return_ship_cost {
-    type: number
+  measure: sr_return_ship_cost {
+    type: sum
     sql: ${TABLE}."SR_RETURN_SHIP_COST" ;;
   }
 
@@ -105,5 +105,9 @@ view: store_returns {
   measure: count {
     type: count
     drill_fields: []
+  }
+  measure: total_return_cost{
+    type:  number
+    sql: ${sr_return_amt} + ${sr_return_ship_cost} ;;
   }
 }
